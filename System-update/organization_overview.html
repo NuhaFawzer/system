@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organization Overview - VolunteerConnect</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #3498db;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    .overview-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .overview-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .overview-section p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 40px;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cta-buttons .btn {
+      padding: 15px 35px;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      color: #fff;
+      transition: background 0.3s ease;
+    }
+    .btn-primary { background-color: #377dac; }
+    .btn-primary:hover { background-color: #2980b9; }
+    .btn-secondary { background-color: #31d374; }
+    .btn-secondary:hover { background-color: #27ae60; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+    }
+    .feature-card img {
+     width: 100%;
+     height: 180px;       /* same height for all images */
+  object-fit: cover;   /* crops nicely, keeps aspect ratio */
+  display: block;
+  margin-bottom: 15px;
+  border-radius: 8px 8px 0 0; /* rounded only at the top */
+}
+    .feature-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .feature-card h3 { margin-bottom: 10px; color: #333; }
+    .feature-card p {
+  color: #555;
+  font-size: 16px;
+  margin-top: auto;   /* pushes paragraph to bottom, keeping them aligned */
+}
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>VolunteerConnect - Organization Overview</h1>
+</header>
+
+<section class="overview-section">
+  <div class="container">
+    <h2>Welcome, Organizations!</h2>
+    <p>VolunteerConnect helps organizations like yours find dedicated volunteers, create impactful events, and track your contributions to the community.</p>
+
+    <div class="cta-buttons">
+      <a href="form.html" class="btn btn-primary">Sign Up</a>
+      <a href="index.php#loginModal" class="btn btn-secondary">Login</a>
+    </div>
+  </div>
+</section>
+
+<section class="container features-grid">
+  <div class="feature-card">
+    <img src="images/create-events.jpeg" alt="Create Events" />
+    <h3>Create Events</h3>
+    <p>Easily create volunteer opportunities and set your requirements to find the perfect match.</p>
+  </div>
+  <div class="feature-card">
+    <img src="images/manage-volunteers.jpeg" alt="Manage Volunteers" />
+    <h3>Manage Volunteers</h3>
+    <p>Keep track of volunteer sign-ups, schedules, and tasks efficiently from one dashboard.</p>
+  </div>
+  <div class="feature-card">
+    <img src="images/track-impact.jpeg" alt="Track Impact" style="vertical-align: top;"/>
+    <h3>Track Impact</h3>
+    <p>Monitor the contributions your volunteers make and showcase the positive impact to stakeholders.</p>
+  </div>
+  <div class="feature-card">
+    <img src="images/automated-communication.jpeg" alt="Automated Communication" />
+    <h3>Automated Communication</h3>
+    <p>Send reminders, updates, and thank-you messages automatically to keep volunteers engaged.</p>
+  </div>
+</section>
+
+
+<footer>
+  &copy; 2025 VolunteerConnect. All Rights Reserved.
+</footer>
+
+</body>
+</html>

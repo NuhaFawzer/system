@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body {
+            background-color: #4768ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            background-image: url(images/backgroundpic.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .form-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; color: #555; }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        input:focus, textarea:focus, select:focus { border-color: #4a90e2; outline: none; }
+        textarea { min-height: 100px; resize: vertical; }
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover { background-color: #3a7bc8; }
+        .error { color: #e74c3c; font-size: 14px; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Sign up</h2>
+        <form action="signup.php" method="POST" enctype="multipart/form-data">
+            
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required pattern="[a-zA-Z0-9_]{3,20}" title="3-20 characters, letters, numbers, underscores">
+            </div>
+
+            <div class="form-group">
+                <label for="Profile">Profile Picture</label>
+                <input type="file" name="Profile" accept=".png,.jpg,.jpeg">
+            </div>
+
+             <div class="form-group">
+                <label for="role">Your Role</label>
+                <select id="role" name="role" required>
+                    <option value="Volunteer" selected>Volunteer</option>
+                    <option value="Organization">Organization</option>
+                </select>
+            </div>
+
+            
+            <!-- NIC field for Volunteers -->
+            <div class="form-group" id="nic-group">
+                <label for="NIC">NIC Number</label>
+                <input type="text" id="NIC" name="NIC">
+            </div>
+
+            <!-- Registration Number field for Organizations -->
+            <div class="form-group" id="reg-group" style="display:none;">
+                <label for="registration_number">Registration Number</label>
+                <input type="text" id="registration_number" name="registration_number">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tel">Phone Number</label>
+                <input type="tel" id="tel" name="tel" maxlength="10" pattern="\d{10}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="signupPassword">Password</label>
+                <input type="password" id="signupPassword" name="signupPassword" required>
+            </div>
+
+           
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const roleSelect = document.getElementById('role');
+        const nicGroup = document.getElementById('nic-group');
+        const regGroup = document.getElementById('reg-group');
+
+        roleSelect.addEventListener('change', () => {
+            if(roleSelect.value === 'Volunteer') {
+                nicGroup.style.display = 'block';
+                nicGroup.querySelector('input').required = true;
+                regGroup.style.display = 'none';
+                regGroup.querySelector('input').required = false;
+            } else {
+                nicGroup.style.display = 'none';
+                nicGroup.querySelector('input').required = false;
+                regGroup.style.display = 'block';
+                regGroup.querySelector('input').required = true;
+            }
+        });
+    </script>
+</body>
+</html>
